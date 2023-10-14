@@ -6,7 +6,7 @@ use std::ptr;
 
 pub type ClientId = i32;
 
-#[link(name = "tdjson")]
+#[link(name = "tdjson_static")]
 extern "C" {
     fn td_create_client_id() -> c_int;
     fn td_send(client_id: c_int, request: *const c_char);

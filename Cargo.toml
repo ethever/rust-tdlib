@@ -6,7 +6,7 @@ description = "TDlib (Telegram Database library) client"
 homepage = "https://github.com/antonio-antuan/rust-tdlib"
 repository = "https://github.com/antonio-antuan/rust-tdlib"
 license = "MIT"
-keywords = [ "telegram", "tdlib" ]
+keywords = ["telegram", "tdlib"]
 categories = ["api-bindings"]
 include = [
   "Cargo.toml",
@@ -14,7 +14,7 @@ include = [
   "README.md",
   "CHANGELOG.md",
   "LICENSE",
-  ".gitignore"
+  ".gitignore",
 ]
 readme = "README.md"
 edition = "2018"
@@ -38,12 +38,25 @@ serde_json = "1"
 
 log = { version = "0.4", optional = true }
 lazy_static = { version = "1.4", optional = true }
-tokio = { version = "1", features = ["sync", "macros", "rt", "time"], optional = true}
+tokio = { version = "1", features = [
+  "sync",
+  "macros",
+  "rt",
+  "time",
+], optional = true }
 async-trait = { version = "0.1", optional = true }
 dyn-clone = { version = "1.0.11", optional = true }
 
+openssl-sys = { version = "0.9", features = ["vendored"] }
+libz-sys = { version = "1.0", features = ["static"] }
 
 [dev-dependencies]
-tokio = {version = "1", features = ["macros", "rt-multi-thread", "sync", "time"]}
+tokio = { version = "1", features = [
+  "macros",
+  "rt-multi-thread",
+  "sync",
+  "time",
+] }
+
 log = { version = "0.4" }
 env_logger = "0.10.0"
